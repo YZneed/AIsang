@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>萝卜</title>
+	<meta charset="utf-8">
+	<script src="js/jquery-1.12.4.js"></script>
+		<!--  /*tab鼠标放哪那显示*/ -->
+		<!--  //轮换图片 -->
+<script type="text/javascript">
+			var num=1;
+    		var lb;
+    		var img_src;
+	function scrollimg(){
+		if (num>3) 
+		{
+			num=1;
+		}
+		var imgsrc="img/l"+num+".jpg" ;
+		$("#scroll_img").find('img').attr('src',imgsrc);
+		num++;
+		lb=window.setTimeout("scrollimg()",3000);
+	}
+	scrollimg();
+	$("#scroll_number li").mouseover(function() {
+		window.clearTimeout(lb);
+		var a=$(this).text();
+		$(this).css("background","red");
+		img_src="img/"+a+".jpg";
+		$("#scroll_img").find("img").attr("src",img_src);
+	}).mouseout(function() {
+		scrollimg();
+		$(this).css("background","gray");
+	});
+		</script>
+<style type="text/css">
+.scroll{
+    width:760px;
+    height:400px;
+    overflow:hidden;
+    padding:5px 0 5px 0;
+    position:relative;
+}
+.scroll img{
+	width: 760px;
+}
+.scroll #scroll_img li{
+    margin-bottom:20px;
+}
+
+
+
+	</style>
+</head>
+<body>
+			<div id="content">
+				<!--轮换显示的横幅广告图片-->
+				<div class="scroll">
+					<ul id="scroll_img">
+						<li><img src="img/lb1.jpg" /></li>
+						<li><img src="img/lb1.jpg" /></li>
+						<li><img src="img/lb1.jpg" /></li>
+					</ul>
+				</div>
+			</div>
+</body>
+</html>

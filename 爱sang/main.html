@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AIsang_主页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/main_a.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/jquery-1.12.4.js"></script>
+		<!--  /*tab鼠标放哪那显示*/ -->
+		<!--  //轮换图片 -->
+<script type="text/javascript">
+			var num=1;
+    		var lb;
+    		var img_src;
+	function scrollimg(){
+		if (num>3) 
+		{
+			num=1;
+		}
+		var imgsrc="img/l"+num+".jpg" ;
+		$("#scroll_img").find('img').attr('src',imgsrc);
+		num++;
+		lb=window.setTimeout("scrollimg()",3000);
+	}
+	scrollimg();
+	$("#scroll_number li").mouseover(function() {
+		window.clearTimeout(lb);
+		var a=$(this).text();
+		$(this).css("background","red");
+		img_src="img/"+a+".jpg";
+		$("#scroll_img").find("img").attr("src",img_src);
+	}).mouseout(function() {
+		scrollimg();
+		$(this).css("background","gray");
+	});
+		</script>
+	<style type="text/css">
+	.a{
+		text-decoration: none;
+	}
+	.scroll{
+		margin:0px auto;
+    width:760px;
+    height:400px;
+    overflow:hidden;
+    padding:5px 0 5px 0;
+    position:relative;
+}
+.scroll img{
+	width: 760px;
+}
+.scroll #scroll_img li{
+    margin-bottom:20px;
+}
+	</style>
+</head>
+<body>
+<header id="header">
+		
+	<div class="head">
+		<a href=" for">点击返回首页</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<span>你好,欢迎来到爱sang！</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href=" for">点击查看sang话</a>
+	</div>
+</header>
+			
+			
+
+<div class="bighouse">
+	<div id="content">	
+		<div class="scroll">
+			<ul id="scroll_img">
+				<li><img src="img/l1.jpg" /></li>
+				<li><img src="img/l2.jpg" /></li>
+				<li><img src="img/l3.jpg" /></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="put">
+		<form>
+		<div class="wenben">
+			<textarea name="loveword" id="txtcontent" class="inputd saytex" onkeyup="testjie(this, 280)" name="txtcontent" style="width: 800px;height:200px;"></textarea>
+			<input type="submit" value="提交"></input>
+			<span id="maxlimitdiv">还可以输入<b>100</b>个字</span>
+		</div>
+		</form>
+	</div>
+	
+	
+	<div class="word">
+		<c:forEach items="${page.getXinxiList() }" var="lo">
+			<ul>
+				<li>${lo.getLid() }</li>
+				<li>${lo.getLword() }</li>
+			</ul>	
+		</c:forEach>
+
+		<div id="fenye">
+  			<a>上一页下一页末页</a>
+    	</div>	
+	</div>	
+	
+</div>
+</body>
+</html>

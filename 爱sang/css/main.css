@@ -1,0 +1,47 @@
+.bigbox{
+	width: 1900px;
+	height: 960px;
+	margin:0px auto;
+	border:1px solid gray;
+	overflow:hidden
+}
+.bigbox .left{
+	float: left;
+	width: 948px;
+	height: 960px;
+	border:1px solid blue;
+	overflow:hidden;
+	position: relative;
+ 	display: block;
+}
+.bigbox .right{
+	width: 948px;
+	height: 960px;
+	border: 1px solid red;
+	float: right;
+	overflow:hidden;
+	position: relative;
+ 	display: block;
+}
+.bigbox .left .leftbox{
+	width: 200px;
+	height: 500px;
+	border: 1px solid black;
+	margin: 0px auto;
+}
+.bigbox .left .leftbox .leftword{
+	line-height: 500px;
+	border: 1px solid black;
+	text-align: center;
+}
+.bigbox .right .rightbox{
+	width: 200px;
+	height: 500px;
+	border: 1px solid black;
+	margin: 0px auto;
+}
+.bigbox .right .rightbox .rightword{
+	line-height: 500px;
+	border: 1px solid black;
+	text-align: center;
+}

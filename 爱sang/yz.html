@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/a.css">
+	<script src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+			var num=1;
+    		var lb;
+    		var img_src;
+		function scrollimg(){
+			if (num>2) 
+			{
+				num=1;
+			}
+			var imgsrc="img/lb"+num+".jpg" ;
+			$("#scroll_img").find('img').attr('src',imgsrc);
+			num++;
+			lb=window.setTimeout("scrollimg()",3000);
+		}
+		scrollimg();
+</script>
+</head>
+<body>
+<header id="header">
+	<div class="logo">
+		<span>AI_sang</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#">Love_word</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="#">Sang_word</a>
+	</div>
+</header>
+
+
+<div id="content">
+	<div class="scroll">
+		<ul id="scroll_img">
+			<li><img src="img/lb1.jpg" /></li>
+			<li><img src="img/lb2.jpg" /></li>
+		</ul>
+	</div>
+</div>
+
+	<%
+	   //设置项目上下文路径
+	   String path = request.getContextPath(); 
+	   pageContext.setAttribute("Path",path); 
+	%> 
+
+<div class="word">
+	<!-- <c:forEach items="${page.getXinxiList() }" var="lo">
+		<ul>
+			<li>${lo.getLid() }</li>
+			<li>${lo.getLword() }</li>
+		</ul>	
+	</c:forEach> -->
+	
+
+	<div id="fenye">
+  		<a>上一页下一页末页</a>
+    </div>	
+</div>	
+
+<div id="footer">
+	<div class="f_word">
+	<hr>
+		<span>本网站由YZ工作室独家创造</span><br>
+		<span>禁止抄袭，禁止借鉴</span>
+	</div>
+</div>
+</body>
+</html>

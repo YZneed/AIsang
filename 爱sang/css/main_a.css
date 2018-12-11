@@ -1,0 +1,57 @@
+#header{
+	width: 100%;
+	height: 36px;
+	margin: 0px auto;
+	border: 1px solid black;
+}
+#header .head{
+	width: 80%;
+	height: 36px;
+	border: 1px solid red;
+	margin:0px auto;
+	line-height: 36px;
+	text-align: center;
+}
+.bighouse{
+	width: 80%;
+	height: 900px;
+	border: 1px solid lightgray;
+	margin: 0px auto;
+}
+.bighouse .put{
+	width: 800px;
+	height: 200px;
+	margin: 0px auto;
+}
+.bighouse .put span{
+	float: right;
+}
+.word{
+	width: 804px;
+	height: 600px;
+	border: 1px solid red;
+	margin: 0px auto;
+	margin-top: 40px;
+}
+.put input{
+	width: 50px;
+	height: 30px;
+	border: 1px solid black;
+	margin-left: 350px;
+	text-align: center;
+}
+#maxlimitdiv{
+	font-size: 12px;
+	color: black;
+}
+.wenben{
+	width: 804px;
+	height: 242px;
+	border: 1px solid red;
+}
+#fenye{
+	width: 140px;
+	height: 20px;
+	border: 1px solid red;
+	margin-left: 650px;
+}
